@@ -5,5 +5,5 @@ export default defineConfig({
   dbCredentials: {
     url: process.env.DATABASE_URL as string,
   },
-  out: './db/migrations',
+  out: './src/db/migrations',
 });

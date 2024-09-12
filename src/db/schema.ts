@@ -7,11 +7,10 @@ import {
   varchar,
 } from 'drizzle-orm/mysql-core';
 import type { AdapterAccountType } from 'next-auth/adapters';
+import { createId } from '@paralleldrive/cuid2';
 
 export const users = mysqlTable('users', {
-  id: varchar('id', { length: 255 })
-    .primaryKey()
-    .$defaultFn(() => crypto.randomUUID()),
+  id: varchar('id', { length: 255 }).primaryKey().$defaultFn(createId),
   name: varchar('name', { length: 255 }),
   email: varchar('email', { length: 255 }).unique(),
   emailVerified: timestamp('emailVerified', {
@@ -19,7 +18,7 @@ export const users = mysqlTable('users', {
     fsp: 3,
   }),
   image: varchar('image', { length: 255 }),
-  password: varchar('password', { length: 255 }), // Add password field
+  password: varchar('password', { length: 255 }),
 });
 
 export const accounts = mysqlTable(
