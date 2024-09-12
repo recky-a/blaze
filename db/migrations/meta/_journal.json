@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1726112198123,
+      "tag": "0000_talented_triathlon",
+      "breakpoints": true
+    }
+  ]
+}
